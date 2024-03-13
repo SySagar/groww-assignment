@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@components/*": ["./app/components/*"],
+      "@layout/*": ["./app/layout/*"],
+      "@store/*": ["./app/store/*"],
+      "@lib/*": ["./app/lib/*"],
     }
   }
 }
