@@ -10,6 +10,11 @@ const APIMethods = {
       return await APIInstance.get("/merchant-metadata");
     },
   },
+  cart: {
+    orderDetails: async () => {
+      return await APIInstance.get("/order-details");
+    },
+  },
 };
 
 export default APIMethods;

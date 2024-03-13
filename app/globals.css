@@ -4,8 +4,14 @@
 }
 
 :root {
-  --background: hsl(0, 1%, 100%);
+  --background: hsl(0, 0%, 100%);
   --foreground: hsl(0, 0%, 40.4%);
   --primary: hsl(219, 69%, 48%);
   --primaryForeground: hsl(0, 0%, 100%);
+  --alpha-primary: color-mix(in srgb, var(--primary) 10%, transparent);
+  --subForeground: color-mix(in srgb, var(--foreground) 80%, transparent);
+}
+
+body{
+  background-color: var(--background);
 }
