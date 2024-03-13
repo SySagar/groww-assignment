@@ -2,3 +2,10 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --background: hsl(0, 1%, 100%);
+  --foreground: hsl(0, 0%, 40.4%);
+  --primary: hsl(219, 69%, 48%);
+  --primaryForeground: hsl(0, 0%, 100%);
+}
