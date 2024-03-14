@@ -4,7 +4,7 @@ import style from "./cart.module.css";
 import APIMethods from "@/app/lib/api";
 import { useCartStore } from "@/app/store/cartStore";
 import Address from "@components/Address/Address";
-import CartList from "@components/Cart/CartList";
+import CartList from "@components/cart/CartList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 
