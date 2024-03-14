@@ -8,9 +8,7 @@ import CartList from "@components/Cart/CartList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 
-var t =0;
 export default function Cart() {
-  console.log("t", t++);
   const { products, paymentMethods, setProducts } = useCartStore();
   const mounted = useRef(true);
   const orderDetails = async () => {
@@ -59,6 +57,12 @@ export default function Cart() {
       <div className={style.cartList}>
         <CartList />
       </div>
+
+    <div className={style.placeOrder}>
+      <button className={style.button} style={{width:'200px'}}>
+        Place Order
+      </button>
+    </div>
     </div>
   );
 }

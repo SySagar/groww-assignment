@@ -51,6 +51,7 @@
   .title{
     font-size: var(--title-font);
     font-weight: var(--title-weight);
+    color: var(--foreground);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,4 +130,12 @@
 
   .itemContainer:hover{
     background-color: var(--alpha-primary);
+  }
+
+  .placeOrder{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    text-transform: capitalize;
   }

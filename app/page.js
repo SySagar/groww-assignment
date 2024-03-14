@@ -1,4 +1,5 @@
 import { Cart } from "./components/cart";
+import { Summary } from "./components/summary";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
      <Cart/>
         </div>
         <div>
-      total
+      <Summary/>
         </div>
       </div>
     </main>
