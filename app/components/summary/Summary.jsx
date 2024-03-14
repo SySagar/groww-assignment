@@ -24,7 +24,9 @@ export default function Summary() {
       </tr>
       <tr>
         <th>Shipping (fixed price)</th>
-        <td class={style.valueAddition}>{currencySymbol} {shippingCost}</td>
+        <td class={style.valueAddition}>{currencySymbol} {
+        (itemCount === 0 ? 0 : shippingCost).toFixed(2)
+        }</td>
       </tr>
       <tr>
         <th>Tax (5% GST)</th>
@@ -40,7 +42,9 @@ export default function Summary() {
   <tbody>
     <tr className={style.total}>
         <th className={style.totalTitle}>Total Amount</th>
-        <td className={style.totalPrice}>{currencySymbol} {(priceTotal + shippingCost + discountValue(priceTotal)).toFixed(2)}</td>
+        <td className={style.totalPrice}>{currencySymbol} {
+          (itemCount === 0 ? 0 : priceTotal + shippingCost + discountValue(priceTotal)).toFixed(2)
+        }</td>
       </tr>
     </tbody>
     </table>

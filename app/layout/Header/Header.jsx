@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
+import Link from 'next/link';
 import { useMerchantStore } from "@/app/store/merchantStore";
 import themeChanger from "@/app/theme/themeChanger";
 import APIMethods from "@lib/api";
@@ -33,12 +34,15 @@ export default function Header() {
     <div className={style.headerContainer}>
       <div className={style.headerBody}>
         <div className={style.logoContainer}>
+          <Link href='/'>
           <Image
             src={merchantLogo}
+            className={style.logo}
             width={35}
             height={35}
             alt="Picture of the author"
-          />
+            />
+            </Link>
           <p>{merchantName} Cart</p>
         </div>
 

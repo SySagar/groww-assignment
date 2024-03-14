@@ -27,35 +27,44 @@
 .summaryContainer > table th {
   text-align: left;
   font-weight: 400;
-  color: var(--foregroundPrimary);
+  color: var(--foreground);
+  font-size: 15px;
 }
 
 .value,
 .valueAddition {
   text-align: right;
   color: var(--foreground);
+  display: flex;
+  justify-content: flex-end;
+  width: 120px;
 }
 
 .valuePrice{
-    color: var(--foregroundPrimary);
+    color: var(--foreground);
+    display: flex;
+    justify-content: flex-end;
 }
 
 .total, .totalTitle, .totalPrice {
-    color: var(--foregroundPrimary);
+    color: var(--foreground);
     font-weight: 800;
     font-size: large;
   }
 
   .totalPrice{
-    width: 110px;
+    width: 120px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
   }
 
 .valueAddition {
-  color: green;
+  color: #209920;
 }
 
 .summaryContainer > table th {
-  width: 400px;
+  width: 450px;
   font-weight: 500;
 }
 

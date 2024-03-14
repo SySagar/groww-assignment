@@ -58,11 +58,7 @@ export default function Cart() {
         <CartList />
       </div>
 
-    <div className={style.placeOrder}>
-      <button className={style.button} style={{width:'200px'}}>
-        Place Order
-      </button>
-    </div>
+
     </div>
   );
 }

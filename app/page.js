@@ -1,5 +1,6 @@
 import { Cart } from "./components/cart";
 import { Summary } from "./components/summary";
+import { additionText } from "./lib/constants";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -7,10 +8,12 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.container}>
         <div className={styles.cart}>
-     <Cart/>
+          <Cart />
         </div>
         <div>
-      <Summary/>
+          <Summary />
+
+          <p className={styles.additionText}>{additionText}</p>
         </div>
       </div>
     </main>

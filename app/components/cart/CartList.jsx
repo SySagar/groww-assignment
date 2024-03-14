@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import IndividualItem from './IndividualItem';
 import style from './cart.module.css';
 import { useCartStore } from '@/app/store/cartStore';
+import { cartEmptyText, additionCartEmptyText } from '@/app/lib/constants';
 
 export default function CartList() {
   
@@ -14,8 +15,10 @@ export default function CartList() {
           <IndividualItem key={item.id} item={item} />
         )) : (
           <>
-          <div style={{fontWeight:'500',display:'flex',alignItems:'center',justifyContent:'center', height:'200px'}}>
-            <p>No items in the cart</p>
+          <div className={style.emptyCart}>
+            <img src="/empty.png" width={250} height={200} alt="" />
+            <p style={{fontSize:'22px',fontWeight:'400'}}>{cartEmptyText}</p>
+            <p style={{fontSize:'12px',fontWeight:'400'}}>{additionCartEmptyText}</p>
           </div>
         </>
         )

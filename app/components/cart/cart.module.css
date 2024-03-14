@@ -65,6 +65,7 @@
 
 
   .cartContainer{
+    position: relative;
     border: 1px solid var(--primary);
     padding: 20px;
     gap: 20px;
@@ -134,8 +135,42 @@
 
   .placeOrder{
     display: flex;
+    position: sticky;
+    bottom: 0px;
+    background-color: var(--background);
+    box-shadow: 0px 0px 0px 0px var(--alpha-primary);
+    border-radius: 8px 8px 0  0;
+    width: 100%;
+    left: 0;
     justify-content: flex-end;
     align-items: center;
-    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 8px;
     text-transform: capitalize;
+  }
+
+  .emptyCart{
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  .disabledButton {
+    opacity: 0.5; 
+    cursor: not-allowed; 
+    background-color: #E0E0E0; 
+    color: #7c7c7c; 
+    font-weight: 500;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  }
+
+  .summaryContainer{
+    position: relative;
+    gap: 20px;
   }
