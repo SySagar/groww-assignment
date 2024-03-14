@@ -17,7 +17,7 @@ const ErrorPage = () => {
   return (
     <div>
       <h1>Oops! Something went wrong.</h1>
-      <p>We'll redirect you to the home page in 5 seconds.</p>
+      <p>We`&apos;`ll redirect you to the home page in 5 seconds.</p>
     </div>
   );
 };
