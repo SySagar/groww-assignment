@@ -3,6 +3,7 @@ import React from 'react';
 import Cart from './Cart';
 import { useCartStore } from '@/app/store/cartStore';
 import { useRouter } from 'next/navigation';
+import { generateTransactionId } from '@/app/utils/transactionIdGenerator';
 import style from './cart.module.css';
 
 export default function OrderSummary() {
@@ -10,7 +11,8 @@ export default function OrderSummary() {
     const router = useRouter()
     const { products } = useCartStore();
     const handlePayments = () => {
-        router.push('/payments', { scroll: false })
+        const newTransactionId = generateTransactionId();
+        router.push(`/payments/${newTransactionId}`, { scroll: false })
       }
     
 
