@@ -1,27 +1,38 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import style from "./cart.module.css";
 import APIMethods from "@/app/lib/api";
 import { useCartStore } from "@/app/store/cartStore";
 import Address from "@components/Address/Address";
+import CartList from "@components/Cart/CartList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 
+var t =0;
 export default function Cart() {
+  console.log("t", t++);
   const { products, paymentMethods, setProducts } = useCartStore();
+  const mounted = useRef(true);
   const orderDetails = async () => {
     try {
       const response = await APIMethods.cart.orderDetails();
-      console.log("orderDetails", response.data);
+      setProducts(response.data.products);
         
     } catch (error) {
       console.log(error);
     }
   };
-
   useEffect(() => {
-    orderDetails();
+    if (!mounted.current) {
+
+      orderDetails();
+    }
+    mounted.current = false;
   }, []);
+
+  const handleRefresh = () => {
+    orderDetails();
+  }
 
   return (
     <div className={style.cartContainer}>
@@ -32,7 +43,7 @@ export default function Cart() {
         </span>
         </p>
         <div className={style.refreshWrapper}>
-        <button className={style.button2}>
+        <button onClick={handleRefresh} className={style.button2}>
         <FontAwesomeIcon icon={faRotateRight} />
         <div>
           refresh
@@ -43,6 +54,10 @@ export default function Cart() {
 
       <div className={style.address}>
         <Address />
+      </div>
+
+      <div className={style.cartList}>
+        <CartList />
       </div>
     </div>
   );

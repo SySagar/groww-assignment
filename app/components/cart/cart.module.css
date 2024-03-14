@@ -20,7 +20,7 @@
 .button2 {
     border: 1px solid var(--primary);
     color: var(--primary);
-    background-color: var(--alpha-primary);
+    background-color: var(--background);
     cursor: pointer;
     font-weight: 500;
     border-radius: 6px;
@@ -32,6 +32,10 @@
     padding: 6px 12px;
     margin-right: 8px;
     margin-bottom: 8px;
+  }
+
+  .button2:hover{
+    background-color: var(--alpha-primary);
   }
 
   .refreshWrapper{
@@ -62,10 +66,9 @@
   .cartContainer{
     border: 1px solid var(--primary);
     padding: 20px;
-    gap: 10px;
+    gap: 20px;
     display: flex;
     flex-direction: column;
-    max-width: 45%;
     border-radius: 10px;
   }
 
@@ -76,4 +79,54 @@
     justify-content: start;
     align-items: center;
     position: relative;
+  }
+
+  .itemContainer{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    padding: 10px;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .itemPreview{
+    padding: 15px;
+    border: 1px solid rgb(197, 197, 197);
+    background-color: white;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .itemDescription{
+    gap: 5px;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  .itemPrice{
+    font-weight: 400;
+    font-size: calc(var(--subTitle-font) - 1px);
+    color: var(--foreground);
+  }
+
+  .midSection{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .endSection{
+    right: 10px;
+    padding-left: 40px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .itemContainer:hover{
+    background-color: var(--alpha-primary);
   }
