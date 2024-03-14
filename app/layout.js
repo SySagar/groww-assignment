@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import { Header } from "@layout/Header";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,16 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
-          rel="icon"
-          href="/"
-          sizes="any"
-          type="image/png"
-        />
+        <link rel="icon" href="/" sizes="any" type="image/png" />
       </head>
       <body className={inter.className}>
-        <Header />
-        {children}
+      <Toaster position="top-right" />
+          <Header />
+          {children}
       </body>
     </html>
   );

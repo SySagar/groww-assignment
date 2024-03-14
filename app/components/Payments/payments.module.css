@@ -1,121 +1,152 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    padding: 1rem;
-    padding-bottom: 2rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 1rem;
+  padding-top: 0;
+  padding-bottom: 2rem;
 }
 
 .button {
-    background-color: var(--primary);
-    color: var(--primaryForeground);
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 6px;
-    font-size: 14px;
-    padding: 8px 16px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
-
-  .next{
-    position: relative;
-    top: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    padding-top: 1rem;
-    align-items: center;
-    width: 100%;
-  }
-
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    background-color: rgb(210, 210, 210);
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    gap: 16px;
+  background-color: var(--primary);
+  color: var(--primaryForeground);
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
-.active{
-    display: flex;
-     width: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    color: var(--primaryForeground);
-    background-color: var(--primary);
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
+.next {
+  position: relative;
+  top: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-top: 1rem;
+  align-items: center;
+  width: 100%;
 }
 
-.address{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: start;
-    align-items: start;
-    position: relative;
-    width: 550px;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: rgb(210, 210, 210);
+  width: 100%;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  padding: 1rem;
+  gap: 16px;
 }
 
-.paymentMethods{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
-    gap: 20px;
-    width: 550px;
+.active {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px 8px 0 0;
+  color: var(--primaryForeground);
+  background-color: var(--primary);
+  font-weight: 600;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
 }
 
-.summary{
-    width: 550px;
+.address {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  width: 550px;
+}
+
+.paymentMethods {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  gap: 5px;
+  width: 550px;
+}
+
+.summary {
+  width: 550px;
 }
 
 .divider {
-    display: flex;
-    position: relative;
-    flex-grow: 1;
-    border-top: 1px solid var(--primary);
-    margin-top: 7px;
-    margin-bottom: 7px;
-    padding-right: 0;
-  }
-
-.options{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    padding: 20px;
-    position: relative;
-    right: 20px;
-    width: 100%;
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  border-top: 1px solid var(--foreground);
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding-right: 0;
 }
 
-.options:hover{
-    cursor: pointer;
-    background-color: var(--alpha-primary);
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  position: relative;
+  right: 20px;
+  width: 100%;
 }
 
-.subHeading{
-    font-size: 10px;
+.options:hover {
+  cursor: pointer;
+  background-color: var(--alpha-primary);
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 10px;
-    font-weight: 600;
+.subHeading {
+  font-size: 11px;
+  color: var(--subForeground);
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.transactionInfo {
+  font-size: 15px;
+  padding-block: 10px;
+  font-weight: 600;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  color: #7c7c7c;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
