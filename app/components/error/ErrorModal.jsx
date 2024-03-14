@@ -1,6 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function ErrorModal() {
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/');
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [router]);
+
+
   return (
     <div style={{
         display: 'flex',

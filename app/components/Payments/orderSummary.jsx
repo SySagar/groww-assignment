@@ -22,7 +22,7 @@ export default function OrderSummary() {
             padding: "8px",
             paddingInline: "14px",
             background: "var(--background)",
-            color: "var(--primary)",
+            color: "var(--foreground)",
           }}
         >
           2

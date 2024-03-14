@@ -173,3 +173,9 @@
   position: relative;
   gap: 20px;
 }
+
+.loadingSkeleton{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

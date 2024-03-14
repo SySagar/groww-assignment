@@ -15,7 +15,13 @@ const ErrorPage = () => {
   }, [router]);
 
   return (
-    <div>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '40px',
+    }}>
       <h1>Oops! Something went wrong.</h1>
       <p>We`&apos;`ll redirect you to the home page in 5 seconds.</p>
     </div>

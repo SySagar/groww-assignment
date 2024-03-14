@@ -4,7 +4,6 @@ import { useStepStore } from "@/app/store/stepStore";
 
 export default function Address() {
   const { step, setNextStep } = useStepStore();
-  console.log("sterp", step);
   const handleNext = () => {
     setNextStep(step+1);
   };
@@ -17,7 +16,7 @@ export default function Address() {
             padding: "8px",
             paddingInline: "14px",
             background: "var(--background)",
-            color: "var(--primary)",
+            color: "var(--foreground)",
           }}
         >
           1

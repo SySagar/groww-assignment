@@ -5,7 +5,7 @@ function themeChanger() {
     async function fetchThemeData() {
       try {
         const response = await APIMethods.merchant.data();
-        console.log("response", response);
+        
         const merchantLogo = response.data.merchantLogo;
         const merchantName = response.data.merchantName;
         const root = document.documentElement;

@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from "react";
 import style from "./cart.module.css";
 import APIMethods from "@/app/lib/api";
 import { useCartStore } from "@/app/store/cartStore";
+import { useLoadingStore } from "@/app/store/loadingStore";
+import { useStepStore } from "@/app/store/stepStore";
 import Address from "@components/Address/Address";
 import CartList from "@components/cart/CartList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,20 +12,26 @@ import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart() {
   const { products, paymentMethods, setProducts } = useCartStore();
+  const {loading,setLoading} = useLoadingStore();
+  const { setNextStep } = useStepStore();
   const mounted = useRef(true);
   const orderDetails = async () => {
     try {
+      setLoading(true);
       const response = await APIMethods.cart.orderDetails();
       setProducts(response.data.products);
         
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
   useEffect(() => {
     if (!mounted.current) {
 
       orderDetails();
+      setNextStep(1);
     }
     mounted.current = false;
   }, []);

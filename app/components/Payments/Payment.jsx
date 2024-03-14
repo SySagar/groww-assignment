@@ -12,13 +12,11 @@ export default function PaymentPage({ transactionId }) {
   const { showSuccess, showError } = useToast();
   const router = useRouter();
 
-  console.log("paymentData", paymentData);
   const handleBack = () => {
     setNextStep(step - 1);
   };
 
   const handleOptionClick = (e) => {
-    console.log(e.target.id);
 
     if (e.target.id === "creditOption") {
       setSelected("credit");
@@ -40,7 +38,7 @@ export default function PaymentPage({ transactionId }) {
       status: "success",
     });
     showSuccess("Payment Successful");
-    // router.push(`/payments/${transactionId}/success`, { scroll: false });
+    router.push(`/payments/${transactionId}/success`, { scroll: false });
   }
 
   return (
@@ -51,7 +49,7 @@ export default function PaymentPage({ transactionId }) {
             padding: "8px",
             paddingInline: "14px",
             background: "var(--background)",
-            color: "var(--primary)",
+            color: "var(--foreground)",
           }}
         >
           3

@@ -5,26 +5,31 @@ import OrderSummaryList from "../../components/Payments/orderSummary";
 import PaymentPage from "../../components/Payments/Payment";
 import { additionText } from "../../lib/constants";
 import styles from "../payment.module.css";
-import { useEffect } from "react";
-import { usePaymentStore } from "@/app/store/paymentStore";
-import { useErrorStore } from "@/app/store/errorStore";
-import useToast from "@/app/hooks/useToast";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { usePaymentStore } from "@/app/store/paymentStore";
+import useToast from "@/app/hooks/useToast";
 import ErrorModal from "@/app/components/error/ErrorModal";
 export default function Payments({params}) {
 
   const {paymentData} = usePaymentStore();
-  const {error,setError} = useErrorStore();
+  const [error,setError] = useState({
+    message : "",
+    code : 0,
+    status : false
+  
+  });
   const { showSuccess, showError } = useToast();
   const router = useRouter();
     useEffect(()=>{
       if(params.transactionId !== paymentData.transactionId)
       {
         showError("Something went wrong. Please try again.")
-        setError({message : "Invalid ID or refresh", code : 500, errorStatus : true})
+        setError({message : "Invalid ID or refresh", code : 500, status : true})
       }
 
     },[paymentData.transactionId]);
+    console.log('error',error)
 
   return (
     <main className={styles.main}>{

@@ -1,7 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from 'next/link';
+import { useLoadingStore } from "@/app/store/loadingStore";
 import { useMerchantStore } from "@/app/store/merchantStore";
+import { RectangleSkeleton, CircleSkeleton } from "@/app/components/Standard/Skeleton/Skeleton";
 import themeChanger from "@/app/theme/themeChanger";
 import APIMethods from "@lib/api";
 import style from "./header.module.css";
@@ -10,6 +12,7 @@ import Image from "next/image";
 export default function Header() {
   const { merchantName, merchantLogo, setMerchant } = useMerchantStore();
   const { fetchThemeData, resetThemeToOriginal } = themeChanger();
+  const [loading,setLoading] = useState(false);
 
   const themeChange = () => {
     fetchThemeData();
@@ -27,24 +30,34 @@ export default function Header() {
   }
 
   useEffect(() => {
-    fethcMerchantDetails();
+    setLoading(true);
+    fethcMerchantDetails().finally(() => setLoading(false));
   }, []);
 
   return (
     <div className={style.headerContainer}>
       <div className={style.headerBody}>
-        <div className={style.logoContainer}>
-          <Link href='/'>
-          <Image
-            src={merchantLogo}
-            className={style.logo}
-            width={35}
-            height={35}
-            alt="Picture of the author"
-            />
-            </Link>
-          <p>{merchantName} Cart</p>
-        </div>
+        {
+          loading ? <div className={style.loadingSkeleton}>
+            <div className={style.skeleton}>
+              <CircleSkeleton width="35px" height="35px" />
+              <RectangleSkeleton width="100px" height="35px" />
+            </div>
+          </div> : (
+             <div className={style.logoContainer}>
+             <Link href='/'>
+             <Image
+               src={merchantLogo}
+               className={style.logo}
+               width={35}
+               height={35}
+               alt="Picture of the author"
+               />
+               </Link>
+             <p>{merchantName} Cart</p>
+           </div>
+          )
+        }
 
         <div className={style.themeToggle}>
           <button onClick={defaultTheme} className={style.button}>default</button>
