@@ -1,9 +1,11 @@
 import React from "react";
 import style from "./payments.module.css";
 import { useStepStore } from "@/app/store/stepStore";
+import { useAddressStore } from "@/app/store/useAddressStore";
 
 export default function Address() {
   const { step, setNextStep } = useStepStore();
+  const {address} = useAddressStore();
   const handleNext = () => {
     setNextStep(step+1);
   };
@@ -30,7 +32,7 @@ export default function Address() {
           {" "}
           Deliver to: Soumya Sagar Samal, 768017
         </p>
-        <p className={style.addressSub} style={{color:'var(--foreground)'}}> Atri Hall of Residence, near VSSUT , Burla, Sambalpur, Odisha</p>
+        <p className={style.addressSub} style={{color:'var(--foreground)'}}>{address}</p>
       </div>
       {
         (step===1) &&

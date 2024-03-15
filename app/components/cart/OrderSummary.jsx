@@ -5,6 +5,7 @@ import { useCartStore } from '@/app/store/cartStore';
 import { useRouter } from 'next/navigation';
 import { generateTransactionId } from '@/app/utils/transactionIdGenerator';
 import { usePaymentStore } from '@/app/store/paymentStore';
+import { placeOrder } from '@/app/lib/constants';
 import style from './cart.module.css';
 
 export default function OrderSummary() {
@@ -35,7 +36,7 @@ export default function OrderSummary() {
       <button onClick={handlePayments} className={
         products.length>0 ? style.button : style.disabledButton
       } style={{width:'200px'}}>
-        Place Order
+        {placeOrder}
       </button>
     </div>
     </div>
