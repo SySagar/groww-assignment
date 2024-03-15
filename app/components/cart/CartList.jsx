@@ -10,8 +10,6 @@ export default function CartList() {
   
   const {loading} = useLoadingStore();
   const {products} = useCartStore();
-  console.log('load', loading);
-  console.log('arr',Array(4))
   
   return (
     <div className={style.CartList}>

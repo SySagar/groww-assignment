@@ -5,11 +5,13 @@ import { useEffect } from "react";
 import { usePaymentStore } from "@/app/store/paymentStore";
 import { useRouter } from "next/navigation";
 import { Summary } from "@/app/components/summary";
+import useToast from "@/app/hooks/useToast";
 
 export default function SuccessDone() {
   const router = useRouter();
   const [counter,setCounter] = React.useState(30);
   const { paymentData } = usePaymentStore();
+  const {showError} = useToast();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +28,13 @@ export default function SuccessDone() {
     return () => clearInterval(interval);
   }
   ,[counter]);
+
+  useEffect(()=>{
+    if(!paymentData.transactionId && !paymentData.paymentMethod){
+      showError("Transaction cancelled");
+      router.push("/");
+    }
+  },[]);
 
   return (
     <div
@@ -75,7 +84,7 @@ export default function SuccessDone() {
             
       </div>
 
-      <span style={{fontWeight:'700', color:'var(--foreground'}}>redirecting to home page in {counter} seconds...</span>
+      <span className={style.redirectText} style={{fontWeight:'700', color:'var(--foreground'}}>redirecting to home page in {counter} seconds...</span>
     </div>
   );
 }

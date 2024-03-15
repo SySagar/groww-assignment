@@ -52,6 +52,49 @@
     padding: 15px;
     gap: 5px;
     font-size: 14px;
-    font-weight: 600;
-    color: var(--primary);
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  @media only screen and (max-width: 650px) {
+    .container{
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .paymentStatus{
+      font-size: 15px;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .redirectText{
+      font-size: 15px;
+    }
+
+    .receiptContainer{
+      width: 320px;
+    }
+  }
+
+  
+  @media only screen and (max-width: 850px) {
+    .container{
+      padding: 20px;
+      gap: 30px;
+    }
+
+    .paymentStatus{
+      font-size: 18px;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .redirectText{
+      font-size: 18px;
+    }
+
+    .receiptContainer{
+      width: 80%;
+    }
   }

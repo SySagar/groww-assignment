@@ -5,7 +5,6 @@ import CartList from "../cart/CartList";
 
 export default function OrderSummary() {
   const { step, setNextStep } = useStepStore();
-  console.log("sterp", step);
   const handleNext = () => {
     setNextStep(step+1);
   };

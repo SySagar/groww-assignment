@@ -5,6 +5,7 @@ import APIMethods from "@/app/lib/api";
 import { useCartStore } from "@/app/store/cartStore";
 import { useLoadingStore } from "@/app/store/loadingStore";
 import { useStepStore } from "@/app/store/stepStore";
+import useToast from "@/app/hooks/useToast";
 import Address from "@components/Address/Address";
 import CartList from "@components/cart/CartList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +13,7 @@ import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart() {
   const { products, paymentMethods, setProducts } = useCartStore();
+  const { showError } = useToast();
   const {loading,setLoading} = useLoadingStore();
   const { setNextStep } = useStepStore();
   const mounted = useRef(true);
@@ -22,7 +24,7 @@ export default function Cart() {
       setProducts(response.data.products);
         
     } catch (error) {
-      console.log(error);
+      showError("Error fetching order details");
     } finally {
       setLoading(false);
     }

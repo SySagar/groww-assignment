@@ -125,6 +125,16 @@
   
  }
 
+ @media only screen and (max-width: 650px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+ }
+
  
 
 .itemPrice {
