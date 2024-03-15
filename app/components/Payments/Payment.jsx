@@ -19,7 +19,7 @@ export default function PaymentPage({ transactionId }) {
 
   const handleOptionClick = (e) => {
     if (e.target.id === "creditOption") {
-      setSelected("credit");
+      setSelected("card");
     } else {
       setSelected("upi");
     }
@@ -34,10 +34,10 @@ export default function PaymentPage({ transactionId }) {
       paymentMethod: selected.toUpperCase(),
       transactionTime: new Date().toLocaleString(),
     });
-    if(paymentData.status === "success")
+    if(randomStatus.status === "success")
     showSuccess("Payment Successful");
     else
-    if(paymentData.status === "pending")
+    if(randomStatus.status === "pending")
     showGeneral("Payment Pending");
     else
     showError("Payment Failed");
@@ -48,6 +48,7 @@ export default function PaymentPage({ transactionId }) {
     <div className={style.container}>
       <div className={step === 3 ? style.active : style.header}>
         <span
+        className={style.stepTitle}
           style={{
             padding: "8px",
             paddingInline: "14px",
@@ -87,7 +88,7 @@ export default function PaymentPage({ transactionId }) {
             name="payment"
             disabled={step === 3 ? false : true}
             value="credit"
-            checked={selected === "credit"}
+            checked={selected === "card"}
           />
         </div>
 

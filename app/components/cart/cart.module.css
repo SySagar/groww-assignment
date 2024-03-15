@@ -106,7 +106,26 @@
   gap: 5px;
   font-weight: 700;
   color: var(--foreground);
+  -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
+
+@media only screen and (max-width: 850px) {
+  .itemDescription {
+    gap: 5px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .itemQuantity{
+    font-size: 15px;
+  }
+  
+ }
+
+ 
 
 .itemPrice {
   font-weight: 400;

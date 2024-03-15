@@ -18,6 +18,7 @@ export default function OrderSummary() {
     <div className={style.container}>
       <div className={step === 2 ? style.active : style.header}>
         <span
+        className={style.stepTitle}
           style={{
             padding: "8px",
             paddingInline: "14px",

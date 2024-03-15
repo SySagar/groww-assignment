@@ -25,6 +25,24 @@
   font-weight: 700;
 }
 
+@media only screen and (max-width: 550x) {
+  .headerBody {
+    padding: 5px 10px!important;
+  }
+
+  .button {
+    padding: 5px 10px!important;
+  }
+
+  .button2 {
+    padding: 5px 10px!important;
+  }
+
+  .merchantName{
+    font-size: 12px!important;
+  }
+}
+
 .themeToggle {
   display: flex;
   align-items: center;

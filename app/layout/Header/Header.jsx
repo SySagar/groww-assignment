@@ -54,7 +54,7 @@ export default function Header() {
                alt="Picture of the author"
                />
                </Link>
-             <p>{merchantName} Cart</p>
+             <p className={style.merchantName}>{merchantName} Cart</p>
            </div>
           )
         }

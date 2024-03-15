@@ -1,7 +1,7 @@
 import { Cart } from "./components/cart";
 import { Summary } from "./components/summary";
 import { additionText } from "./lib/constants";
-import styles from "./page.module.css";
+import styles from "./home.module.css";
 
 export default function Home() {
   return (

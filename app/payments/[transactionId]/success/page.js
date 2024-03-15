@@ -8,7 +8,7 @@ import { Summary } from "@/app/components/summary";
 
 export default function SuccessDone() {
   const router = useRouter();
-  const [counter,setCounter] = React.useState(10);
+  const [counter,setCounter] = React.useState(30);
   const { paymentData } = usePaymentStore();
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export default function SuccessDone() {
           ? "/success.gif"
           : paymentData.status === "pending"
           ? "/pending.gif"
-          : "/fai.gif"
+          : "/fail.gif"
       
-      } width={200} height={200} alt={paymentData.status} />
+      } width={120} height={120} alt={paymentData.status} />
 
       <p className={style.paymentStatus}>{
         paymentData.statusMessage

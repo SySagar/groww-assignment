@@ -12,6 +12,7 @@ export default function Address() {
     <div className={style.container}>
       <div className={step === 1 ? style.active : style.header}>
         <span
+        className={style.stepTitle}
           style={{
             padding: "8px",
             paddingInline: "14px",
@@ -29,7 +30,7 @@ export default function Address() {
           {" "}
           Deliver to: Soumya Sagar Samal, 768017
         </p>
-        <p style={{color:'var(--foreground)', fontWeight:'400',fontSize:'14px'}}> Atri Hall of Residence, near VSSUT , Burla, Sambalpur, Odisha</p>
+        <p className={style.addressSub} style={{color:'var(--foreground)'}}> Atri Hall of Residence, near VSSUT , Burla, Sambalpur, Odisha</p>
       </div>
       {
         (step===1) &&

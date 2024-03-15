@@ -34,3 +34,16 @@
     color: var(--foreground);
     font-size: 14px;
 }
+
+
+@media only screen and (max-width: 1090px) {
+    .container{
+        flex-direction: column-reverse!important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .process{
+        gap: 40px;
+    }
+}

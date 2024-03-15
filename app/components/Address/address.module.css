@@ -18,18 +18,25 @@
     font-size: 12px;
     font-weight: 400;
     color: var(--subForeground);
+    text-wrap: wrap;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 
 
 .addressBody{
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
     gap: 10px;
 }
 
 .info{
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     gap: 5px; 
 }
 
@@ -38,8 +45,6 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    position: absolute;
-    right: calc(0% + 20px);
     font-weight: 500;
     border-radius: 6px;
     gap: 5px;
@@ -49,4 +54,14 @@
 
   .button:hover{
     background-color: var(--alpha-primary);
+  }
+
+  @media only screen and (max-width: 1090px) {
+   .sub {
+        font-size: 10px;
+    }
+
+    .main {
+        font-size: 12px;
+    }
   }
