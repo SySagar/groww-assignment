@@ -1,14 +1,15 @@
-import create from 'zustand';
+import create from "zustand";
 
 const initialState = {
-  merchantName: '',
-  merchantLogo: '',
+  merchantName: "",
+  merchantLogo: "",
 };
 
 export const useMerchantStore = create((set) => ({
   ...initialState,
-  setMerchant: (data) => set((state) => ({
-    merchantName: data.merchantName,
-    merchantLogo: data.merchantLogo,
-  })),
+  setMerchant: (data) =>
+    set((state) => ({
+      merchantName: data.merchantName,
+      merchantLogo: data.merchantLogo,
+    })),
 }));

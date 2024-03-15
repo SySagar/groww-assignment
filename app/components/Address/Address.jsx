@@ -87,15 +87,9 @@ export default function Address() {
       </Modal>
       <div className={style.addressBody}>
         <div className={style.info}>
-          <p className={style.main}>
-              "Deliver to: Soumya Sagar Samal"
-          </p>
+          <p className={style.main}>Deliver to: Soumya Sagar Samal</p>
           <p className={style.sub}>
-            {address ? (
-              address
-            ) : (
-              "Select delivery location"
-            )}
+            {address ? address : "Select delivery location"}
           </p>
         </div>
 

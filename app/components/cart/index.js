@@ -1,1 +1,1 @@
-export {default as Cart} from './OrderSummary';
+export { default as Cart } from "./OrderSummary";

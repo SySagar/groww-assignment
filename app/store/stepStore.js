@@ -1,6 +1,6 @@
-import create from 'zustand';
+import create from "zustand";
 
 export const useStepStore = create((set) => ({
-  step : 1,
-  setNextStep : (stepNo) => set({step: stepNo}),
+  step: 1,
+  setNextStep: (stepNo) => set({ step: stepNo }),
 }));

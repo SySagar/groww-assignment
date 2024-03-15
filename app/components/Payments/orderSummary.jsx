@@ -6,18 +6,18 @@ import CartList from "../cart/CartList";
 export default function OrderSummary() {
   const { step, setNextStep } = useStepStore();
   const handleNext = () => {
-    setNextStep(step+1);
+    setNextStep(step + 1);
   };
 
   const handleBack = () => {
-    setNextStep(step-1);
+    setNextStep(step - 1);
   };
 
   return (
     <div className={style.container}>
       <div className={step === 2 ? style.active : style.header}>
         <span
-        className={style.stepTitle}
+          className={style.stepTitle}
           style={{
             padding: "8px",
             paddingInline: "14px",
@@ -29,21 +29,20 @@ export default function OrderSummary() {
         </span>
         Order Summary
       </div>
-      
+
       <div className={style.summary}>
-       <CartList/>
+        <CartList />
       </div>
-      {
-        (step===2) &&
-          <div className={style.next}>
-        <button onClick={handleNext} className={style.button}>
-          Next
-        </button>
-        <button onClick={handleBack} className={style.button}>
-          Back
-        </button>
-      </div>
-    }
+      {step === 2 && (
+        <div className={style.next}>
+          <button onClick={handleNext} className={style.button}>
+            Next
+          </button>
+          <button onClick={handleBack} className={style.button}>
+            Back
+          </button>
+        </div>
+      )}
     </div>
   );
 }

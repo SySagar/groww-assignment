@@ -1,142 +1,138 @@
-.container{
-    background-color: var(--alpha-primary);
-    padding: 14px;
-    border-radius: 4px;
-    position: relative;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+.container {
+  background-color: var(--alpha-primary);
+  padding: 14px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
-.main{
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--foreground);
+.main {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
 }
 
-.sub{
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--subForeground);
-    text-wrap: wrap;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
+.sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--subForeground);
+  text-wrap: wrap;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
-
-.addressBody{
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    gap: 10px;
+.addressBody {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  gap: 10px;
 }
 
-.info{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 5px; 
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 5px;
 }
 
 .button {
-    color: var(--primary);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 6px;
-    gap: 5px;
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  .button:hover{
-    background-color: var(--alpha-primary);
-  }
-
-  @media only screen and (max-width: 1090px) {
-   .sub {
-        font-size: 10px;
-    }
-
-    .main {
-        font-size: 12px;
-    }
-  }
-
-  .deliveryLocation{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: start;
-    color: var(--primary);
-    padding: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    width: 95%;
-    gap: 20px;
-  }
-
-  .locationOptions{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: start;
-    gap: 10px;
-    padding: 20px;
-    cursor: pointer;
-    
-  }
-
-  
-  .locationOptions:hover{
-    background-color: var(--alpha-primary);
-    border-radius: 8px;
-  }
-
-  
-  @media only screen and (max-width: 650px) {
-    .deliveryLocation {
-      font-size: 18px;
-    }
-
-    .addressName {
-      font-size: 15px!important;
-    }
-  }
-
-  .radioInput{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: start;
-  }
-
-  .radioInput[type='radio']:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-    position: relative;
-    background-color: #d1d3d1;
-    content: '';
-    display: inline-block;
-    visibility: visible;
+  color: var(--primary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px;
+  gap: 5px;
+  font-size: 14px;
+  padding: 6px 12px;
 }
 
-.radioInput[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
+.button:hover {
+  background-color: var(--alpha-primary);
+}
+
+@media only screen and (max-width: 1090px) {
+  .sub {
+    font-size: 10px;
+  }
+
+  .main {
+    font-size: 12px;
+  }
+}
+
+.deliveryLocation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+  color: var(--primary);
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 95%;
+  gap: 20px;
+}
+
+.locationOptions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.locationOptions:hover {
+  background-color: var(--alpha-primary);
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 650px) {
+  .deliveryLocation {
+    font-size: 18px;
+  }
+
+  .addressName {
+    font-size: 15px !important;
+  }
+}
+
+.radioInput {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+}
+
+.radioInput[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+}
+
+.radioInput[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
   background-color: var(--primary);
 }
 
-.addressName{
-    font-size: 18px;
-    font-weight: 600;
-    color: black;
+.addressName {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
 }

@@ -1,9 +1,7 @@
-import styles from './SkeletonShapes.module.css';
+import styles from "./SkeletonShapes.module.css";
 
 export function CircleSkeleton({ size }) {
-  return (
-    <div className={`${styles.circle} ${size && styles[size]}`}></div>
-  );
+  return <div className={`${styles.circle} ${size && styles[size]}`}></div>;
 }
 
 export function RectangleSkeleton({ width, height }) {

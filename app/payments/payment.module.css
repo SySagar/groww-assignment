@@ -1,49 +1,48 @@
-.summary{
-    position: sticky;
+.summary {
+  position: sticky;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    padding-block: 50px;
-    align-items: center;
-    flex: 1;
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-block: 50px;
+  align-items: center;
+  flex: 1;
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: center;
-    width: 70%;
-    gap: 10px;
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  width: 70%;
+  gap: 10px;
 }
 
-.process{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    gap: 30px;
+.process {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
 }
 
-.additionText{
-    padding-top: 35px;
-    color: var(--foreground);
-    font-size: 14px;
+.additionText {
+  padding-top: 35px;
+  color: var(--foreground);
+  font-size: 14px;
 }
-
 
 @media only screen and (max-width: 1090px) {
-    .container{
-        flex-direction: column-reverse!important;
-        justify-content: center;
-        align-items: center;
-    }
+  .container {
+    flex-direction: column-reverse !important;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .process{
-        gap: 40px;
-    }
+  .process {
+    gap: 40px;
+  }
 }

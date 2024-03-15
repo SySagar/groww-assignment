@@ -12,11 +12,10 @@
   width: 550px;
 }
 
-.addressSub{
+.addressSub {
   font-size: 14px;
   font-weight: 400;
 }
-
 
 @media only screen and (max-width: 600px) {
   .container {
@@ -24,26 +23,25 @@
     padding-top: 20px;
   }
 
-  .header{
+  .header {
     font-size: 14px;
   }
 
-  
-  .active{
+  .active {
     font-size: 14px;
   }
 
-  .address{
+  .address {
     font-size: 14px;
   }
 
-  .addressSub{
+  .addressSub {
     font-size: 12px;
   }
 
-  .button{
+  .button {
     font-size: 12px;
-  padding: 6px 12px;
+    padding: 6px 12px;
   }
 }
 
@@ -51,7 +49,6 @@
   .container {
     width: 300px;
   }
-
 }
 
 .button {
@@ -123,7 +120,7 @@
   gap: 5px;
 }
 
-.disabledOption{
+.disabledOption {
   cursor: not-allowed;
   display: flex;
   flex-direction: row;
@@ -135,7 +132,6 @@
   right: 20px;
   width: 100%;
 }
-
 
 .divider {
   display: flex;

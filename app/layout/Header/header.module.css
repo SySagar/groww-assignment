@@ -26,25 +26,24 @@
 }
 
 @media only screen and (max-width: 650px) {
-  
   .headerBody {
-    padding: 4px 8px!important;
+    padding: 4px 8px !important;
   }
 
   .button {
-    padding: 4px 8px!important;
+    padding: 4px 8px !important;
   }
 
   .button2 {
-    padding: 4px 8px!important;
+    padding: 4px 8px !important;
   }
 
-  .merchantName{
+  .merchantName {
     display: none;
   }
 
   .headerContainer {
-    padding: 4px 8px!important;
+    padding: 4px 8px !important;
   }
 }
 
@@ -67,25 +66,25 @@
 }
 
 .button2 {
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    background-color: var(--alpha-primary);
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 6px;
-    font-size: 14px;
-    padding: 8px 16px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: var(--alpha-primary);
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
 
-  .logo{
-    cursor: pointer;
-  }
+.logo {
+  cursor: pointer;
+}
 
-  .skeleton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
+.skeleton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}

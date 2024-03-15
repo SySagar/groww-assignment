@@ -1,100 +1,99 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-    padding-block: 50px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding-block: 50px;
 }
 
-.transactionId{
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--primary);
+.transactionId {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--primary);
 }
 
-.receiptContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--foreground);
-    border-radius: 8px;
+.receiptContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
 }
 
-.paymentStatus{
-    color: var(--primary);
-    font-size: 25px;
+.paymentStatus {
+  color: var(--primary);
+  font-size: 25px;
 }
 
 .divider {
-    display: flex;
-    position: relative;
-    flex-grow: 1;
-    border-top: 1px solid var(--subForeground); 
-    margin-bottom: 7px;
-    padding-right: 0;
-  }
-  
-  .transactionId{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: start;
-    padding: 12px;
-  }
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  border-top: 1px solid var(--subForeground);
+  margin-bottom: 7px;
+  padding-right: 0;
+}
 
-  .payMode{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    gap: 5px;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--foreground);
-  }
+.transactionId {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  padding: 12px;
+}
 
-  @media only screen and (max-width: 650px) {
-    .container{
-      padding: 20px;
-      gap: 20px;
-    }
+.payMode {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--foreground);
+}
 
-    .paymentStatus{
-      font-size: 15px;
-      text-align: center;
-      gap: 10px;
-    }
-
-    .redirectText{
-      font-size: 15px;
-    }
-
-    .receiptContainer{
-      width: 320px;
-    }
+@media only screen and (max-width: 650px) {
+  .container {
+    padding: 20px;
+    gap: 20px;
   }
 
-  
-  @media only screen and (max-width: 850px) {
-    .container{
-      padding: 20px;
-      gap: 30px;
-    }
-
-    .paymentStatus{
-      font-size: 18px;
-      text-align: center;
-      padding-bottom: 20px;
-    }
-
-    .redirectText{
-      font-size: 18px;
-    }
-
-    .receiptContainer{
-      width: 80%;
-    }
+  .paymentStatus {
+    font-size: 15px;
+    text-align: center;
+    gap: 10px;
   }
+
+  .redirectText {
+    font-size: 15px;
+  }
+
+  .receiptContainer {
+    width: 320px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .container {
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .paymentStatus {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .redirectText {
+    font-size: 18px;
+  }
+
+  .receiptContainer {
+    width: 80%;
+  }
+}

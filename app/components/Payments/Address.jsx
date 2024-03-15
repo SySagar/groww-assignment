@@ -5,16 +5,16 @@ import { useAddressStore } from "@/app/store/useAddressStore";
 
 export default function Address() {
   const { step, setNextStep } = useStepStore();
-  const {address} = useAddressStore();
+  const { address } = useAddressStore();
   const handleNext = () => {
-    setNextStep(step+1);
+    setNextStep(step + 1);
   };
 
   return (
     <div className={style.container}>
       <div className={step === 1 ? style.active : style.header}>
         <span
-        className={style.stepTitle}
+          className={style.stepTitle}
           style={{
             padding: "8px",
             paddingInline: "14px",
@@ -26,22 +26,23 @@ export default function Address() {
         </span>
         Address
       </div>
-      
+
       <div className={style.address}>
-        <p style={{ fontWeight: 600, color:'var(--foreground)' }}>
+        <p style={{ fontWeight: 600, color: "var(--foreground)" }}>
           {" "}
           Deliver to: Soumya Sagar Samal, 768017
         </p>
-        <p className={style.addressSub} style={{color:'var(--foreground)'}}>{address}</p>
+        <p className={style.addressSub} style={{ color: "var(--foreground)" }}>
+          {address}
+        </p>
       </div>
-      {
-        (step===1) &&
-          <div className={style.next}>
-        <button onClick={handleNext} className={style.button}>
-          Next
-        </button>
-      </div>
-    }
+      {step === 1 && (
+        <div className={style.next}>
+          <button onClick={handleNext} className={style.button}>
+            Next
+          </button>
+        </div>
+      )}
     </div>
   );
 }

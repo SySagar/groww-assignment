@@ -1,6 +1,6 @@
-import create from 'zustand';
+import create from "zustand";
 
 export const useAddressStore = create((set) => ({
-  address : "",
-  setAddress : (address) => set({ address }),
+  address: "",
+  setAddress: (address) => set({ address }),
 }));

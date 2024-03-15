@@ -107,9 +107,9 @@
   font-weight: 700;
   color: var(--foreground);
   -webkit-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 850px) {
@@ -119,13 +119,12 @@
     font-size: 12px;
   }
 
-  .itemQuantity{
+  .itemQuantity {
     font-size: 15px;
   }
-  
- }
+}
 
- @media only screen and (max-width: 650px) {
+@media only screen and (max-width: 650px) {
   .title {
     font-size: 18px;
   }
@@ -133,9 +132,7 @@
   .subtitle {
     font-size: 12px;
   }
- }
-
- 
+}
 
 .itemPrice {
   font-weight: 400;
@@ -166,7 +163,7 @@
   position: sticky;
   bottom: 0px;
   background-color: var(--background);
-  box-shadow: 0px -1px 3px 0px #0000001f; 
+  box-shadow: 0px -1px 3px 0px #0000001f;
   border-radius: 8px 8px 0 0;
   width: 100%;
   left: 0;
@@ -203,7 +200,7 @@
   gap: 20px;
 }
 
-.loadingSkeleton{
+.loadingSkeleton {
   display: flex;
   flex-direction: column;
   gap: 10px;

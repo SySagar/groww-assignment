@@ -1,0 +1,7 @@
+node_modules
+.husky
+.prettierignore
+*.md
+*.json
+public
+.next

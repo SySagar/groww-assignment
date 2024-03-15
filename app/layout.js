@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/" sizes="any" type="image/png" />
       </head>
       <body className={inter.className}>
-      <Toaster position="top-right" />
-          <Header />
-          {children}
+        <Toaster position="top-right" />
+        <Header />
+        {children}
       </body>
     </html>
   );

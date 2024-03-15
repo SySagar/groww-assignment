@@ -34,13 +34,9 @@ export default function PaymentPage({ transactionId }) {
       paymentMethod: selected.toUpperCase(),
       transactionTime: new Date().toLocaleString(),
     });
-    if(randomStatus.status === "success")
-    showSuccess("Payment Successful");
-    else
-    if(randomStatus.status === "pending")
-    showGeneral("Payment Pending");
-    else
-    showError("Payment Failed");
+    if (randomStatus.status === "success") showSuccess("Payment Successful");
+    else if (randomStatus.status === "pending") showGeneral("Payment Pending");
+    else showError("Payment Failed");
     router.push(`/payments/${transactionId}/success`, { scroll: false });
   };
 
@@ -48,7 +44,7 @@ export default function PaymentPage({ transactionId }) {
     <div className={style.container}>
       <div className={step === 3 ? style.active : style.header}>
         <span
-        className={style.stepTitle}
+          className={style.stepTitle}
           style={{
             padding: "8px",
             paddingInline: "14px",
@@ -132,9 +128,7 @@ export default function PaymentPage({ transactionId }) {
         <div className={style.divider}></div>
 
         <div className={style.transactionInfo}>
-          <span style={{color:'var(--foreground)'}}>
-            Transaction Id:{" "}
-            </span>
+          <span style={{ color: "var(--foreground)" }}>Transaction Id: </span>
           <span style={{ fontWeight: 400 }}>{transactionId}</span>
         </div>
 
