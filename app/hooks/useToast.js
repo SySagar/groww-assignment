@@ -17,6 +17,7 @@ export default function useToast() {
 
   const showGeneral = (message) => {
     toast.error(message, {
+      icon: '⏳',
       duration: 5000, 
     });
   };

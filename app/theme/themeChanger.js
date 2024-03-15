@@ -25,6 +25,7 @@ function themeChanger() {
       root.style.setProperty('--foreground', 'hsl(0, 0%, 40.4%)');
       root.style.setProperty('--primary', 'hsl(219, 69%, 48%)');
       root.style.setProperty('--primaryForeground', 'hsl(0, 0%, 100%)');
+      root.style.setProperty('--boxShadow: 0 2px 4px rgba(0, 0, 0, 0.1)');
   }
   return { fetchThemeData, resetThemeToOriginal };
 }

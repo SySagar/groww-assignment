@@ -5,7 +5,9 @@ export const usePaymentStore = create((set) => ({
     paymentMethod : "",
     transactionId : "",
     status : "",
+    statusMessage : "",
     amount : 0,
+    transactionTime : "",
   },
     setPaymentData : (paymentData) => set({paymentData}),
 }));

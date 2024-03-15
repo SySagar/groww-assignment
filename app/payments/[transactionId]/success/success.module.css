@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.transactionId{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.receiptContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--foreground);
+    border-radius: 8px;
+}
+
+.paymentStatus{
+    color: var(--primary);
+    font-size: 25px;
+}
+
+.divider {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    border-top: 1px solid var(--subForeground); 
+    margin-bottom: 7px;
+    padding-right: 0;
+  }
+  
+  .transactionId{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    padding: 12px;
+  }
+
+  .payMode{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+  }

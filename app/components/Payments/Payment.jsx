@@ -3,13 +3,14 @@ import style from "./payments.module.css";
 import { useStepStore } from "@/app/store/stepStore";
 import { usePaymentStore } from "@/app/store/paymentStore";
 import { useRouter } from "next/navigation";
+import { getRandomStatus } from "@/app/utils/getStatus";
 import useToast from "@/app/hooks/useToast";
 
 export default function PaymentPage({ transactionId }) {
   const { step, setNextStep } = useStepStore();
   const { paymentData, setPaymentData } = usePaymentStore();
   const [selected, setSelected] = React.useState("");
-  const { showSuccess, showError } = useToast();
+  const { showSuccess, showError, showGeneral } = useToast();
   const router = useRouter();
 
   const handleBack = () => {
@@ -17,29 +18,31 @@ export default function PaymentPage({ transactionId }) {
   };
 
   const handleOptionClick = (e) => {
-
     if (e.target.id === "creditOption") {
       setSelected("credit");
     } else {
       setSelected("upi");
     }
-
-    setPaymentData({
-      ...paymentData,
-      paymentMethod: e.target.id,
-    });
-    
   };
 
-
   const handleProcessPayment = () => {
+    const randomStatus = getRandomStatus();
     setPaymentData({
       ...paymentData,
-      status: "success",
+      status: randomStatus.status,
+      statusMessage: randomStatus.message,
+      paymentMethod: selected.toUpperCase(),
+      transactionTime: new Date().toLocaleString(),
     });
+    if(paymentData.status === "success")
     showSuccess("Payment Successful");
+    else
+    if(paymentData.status === "pending")
+    showGeneral("Payment Pending");
+    else
+    showError("Payment Failed");
     router.push(`/payments/${transactionId}/success`, { scroll: false });
-  }
+  };
 
   return (
     <div className={style.container}>
@@ -59,7 +62,7 @@ export default function PaymentPage({ transactionId }) {
 
       <div className={style.paymentMethods}>
         <div
-          className={style.options}
+          className={step !== 3 ? style.disabledOption : style.options}
           onClick={handleOptionClick}
           id="creditOption"
         >
@@ -82,13 +85,14 @@ export default function PaymentPage({ transactionId }) {
             type="radio"
             id="credit"
             name="payment"
+            disabled={step === 3 ? false : true}
             value="credit"
             checked={selected === "credit"}
           />
         </div>
 
         <div
-          className={style.options}
+          className={step !== 3 ? style.disabledOption : style.options}
           onClick={handleOptionClick}
           id="upiOption"
         >
@@ -118,6 +122,7 @@ export default function PaymentPage({ transactionId }) {
             type="radio"
             id="credit"
             name="payment"
+            disabled={step === 3 ? false : true}
             value="credit"
             checked={selected === "upi"}
           />
@@ -126,17 +131,22 @@ export default function PaymentPage({ transactionId }) {
         <div className={style.divider}></div>
 
         <div className={style.transactionInfo}>
-          Transaction Id:{' '}<span style={{fontWeight:400}}>{transactionId}</span>
+          <span style={{color:'var(--foreground)'}}>
+            Transaction Id:{" "}
+            </span>
+          <span style={{ fontWeight: 400 }}>{transactionId}</span>
         </div>
 
         <div className={style.divider}></div>
-
       </div>
       {step === 3 && (
         <div className={style.next}>
-          <button onClick={handleProcessPayment} className={
-            (selected === "" || step !==3) ? style.disabled : style.button
-          }>
+          <button
+            onClick={handleProcessPayment}
+            className={
+              selected === "" || step !== 3 ? style.disabled : style.button
+            }
+          >
             Make Payment
           </button>
           <button onClick={handleBack} className={style.button}>
