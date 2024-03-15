@@ -11,7 +11,6 @@ export default function Address() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { address, setAddress } = useAddressStore();
   const [selected, setSelected] = React.useState("");
-  const { loading } = useLoadingStore();
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -89,16 +88,10 @@ export default function Address() {
       <div className={style.addressBody}>
         <div className={style.info}>
           <p className={style.main}>
-            {loading ? (
-              <RectangleSkeleton width={200} height={20} />
-            ) : (
               "Deliver to: Soumya Sagar Samal"
-            )}
           </p>
           <p className={style.sub}>
-            {loading ? (
-              <RectangleSkeleton width={300} height={20} />
-            ) : address ? (
+            {address ? (
               address
             ) : (
               "Select delivery location"
