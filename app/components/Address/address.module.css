@@ -65,3 +65,78 @@
         font-size: 12px;
     }
   }
+
+  .deliveryLocation{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: start;
+    color: var(--primary);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 95%;
+    gap: 20px;
+  }
+
+  .locationOptions{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    padding: 20px;
+    cursor: pointer;
+    
+  }
+
+  
+  .locationOptions:hover{
+    background-color: var(--alpha-primary);
+    border-radius: 8px;
+  }
+
+  
+  @media only screen and (max-width: 650px) {
+    .deliveryLocation {
+      font-size: 18px;
+    }
+
+    .addressName {
+      font-size: 15px!important;
+    }
+  }
+
+  .radioInput{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .radioInput[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+
+.radioInput[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+  background-color: var(--primary);
+}
+
+.addressName{
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
